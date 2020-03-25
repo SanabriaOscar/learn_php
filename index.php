@@ -49,7 +49,7 @@ include("../crud/includes/footer.php")
     <tr>
         <th>title</th>
         <th>description</th>
-        <th>create_  ad</th>
+        <th>create_ad</th>
         <th>acciones</th>
     </tr>
 </thead>
@@ -67,24 +67,18 @@ while ($row =mysqli_fetch_array($result_tasks)) {?>
     <td> <?php echo $row["create_ad"]?></td>
     <td>
         <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-secondary">
-        <i class="fas fa-edit">edit</i>
+      <i class="fas fa-marker">edit</i>
     </a>
-        <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn succe">
-        <i class="fas fa-trash-alt">delete</i>
+        <a href="delete.php?id=<?php echo $row['id']?>" class="btn btn-danger">
+        <i class="far fa-trash-alt">delete</i>
     </a>
     </td>
 </tr>
-
-
-
-
 <?php } ?>
  
-
-
 </tbody>
 
-        </table>
+        </table> 
     </div>
 
 </div>
