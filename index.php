@@ -18,7 +18,7 @@ include("../crud/includes/footer.php")
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
- <?php session_unset() }
+ <?php session_unset();}
     ?>
     
     <div class="card card-body">
@@ -26,15 +26,15 @@ include("../crud/includes/footer.php")
 <form action="save.php" method="POST">
     <div class="form-grup">
         <input type="text" name="title" class="form-control"
-        placeholder="título de la tarea" autofocus>
+        placeholder="task title" autofocus>
 
     </div>
-    <div class="form-grup">
+    <div class="form-group">
         <textarea name="description"  rows="2" class="form-control"
-         placeholder="Descripción de la tarea"></textarea>
+         placeholder="task description"></textarea>
     </div>
     <input type="submit" class="btn btn-success btn-block"
-    name="Guardar_tarea" value="Guardar tarea">
+    name="save_task" value="save task">
 </form>
      
     </div>
@@ -44,7 +44,47 @@ include("../crud/includes/footer.php")
 
 
     <div class="col-md-8">
-        
+        <table class="table table-bordered">
+<thead>
+    <tr>
+        <th>title</th>
+        <th>description</th>
+        <th>create_  ad</th>
+        <th>acciones</th>
+    </tr>
+</thead>
+<tbody>
+
+
+<?php
+$query = "SELECT * FROM task";
+$result_tasks = mysqli_query($conn, $query);
+
+while ($row =mysqli_fetch_array($result_tasks)) {?>
+<tr>
+    <td> <?php echo $row["title"]?></td>
+    <td> <?php echo $row["description"]?></td>
+    <td> <?php echo $row["create_ad"]?></td>
+    <td>
+        <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn-secondary">
+        <i class="fas fa-edit">edit</i>
+    </a>
+        <a href="edit.php?id=<?php echo $row['id']?>" class="btn btn succe">
+        <i class="fas fa-trash-alt">delete</i>
+    </a>
+    </td>
+</tr>
+
+
+
+
+<?php } ?>
+ 
+
+
+</tbody>
+
+        </table>
     </div>
 
 </div>
