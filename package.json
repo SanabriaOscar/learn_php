@@ -1,0 +1,29 @@
+{
+  "name": "pagina",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src",
+    "dev": "nodemon src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.0.2",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeSanabria/learning-nodejs-1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CodeSanabria/learning-nodejs-1/issues"
+  },
+  "homepage": "https://github.com/CodeSanabria/learning-nodejs-1#readme",
+  "description": ""
+}
